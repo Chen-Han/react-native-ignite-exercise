@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, ListView, Text } from 'react-native'
 import { connect } from 'react-redux'
+import Api from '../Services/Api'
 
 // For empty lists
 // import AlertMessage from '../Components/AlertMessage'
@@ -55,14 +56,20 @@ class TextablesScreen extends Component {
     const sectionHeaderHasChanged = (s1, s2) => s1 !== s2
 
     // DataSource configured
-    const ds = new ListView.DataSource({rowHasChanged, sectionHeaderHasChanged})
+    this.ds = new ListView.DataSource({rowHasChanged, sectionHeaderHasChanged})
 
     // Datasource is always in state
     this.state = {
-      dataSource: ds.cloneWithRowsAndSections(dataObjects)
+      dataSource: this.ds.cloneWithRowsAndSections(dataObjects)
     }
+    setTimeout(getData, 1000);
   }
-
+  async getData(){
+    const data = await Api.getData();
+    this.setState({
+      dataSource: this.ds.cloneWithRowsAndSections(data);
+    })
+  }
   /* ***********************************************************
   * STEP 3
   * `renderRow` function -How each cell/row should be rendered
