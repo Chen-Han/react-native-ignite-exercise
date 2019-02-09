@@ -18,10 +18,19 @@ export default class LaunchScreen extends Component {
           <View style={styles.section} >
             <Image source={Images.ready} />
             <Text style={styles.sectionText}>
-              This probably isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
+              This text changed isn't what your app is going to look like. Unless your designer handed you this screen and, in that case, congrats! You're ready to ship. For everyone else, this is where you'll see a live preview of your fully functioning app using Ignite.
             </Text>
           </View>
-
+          <View style={styles.section} >
+            <Text style={styles.sectionText}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae fugiat non beatae earum amet. Quasi similique vitae voluptates, odio, fugiat praesentium accusantium veniam dolor voluptatum labore ducimus minus iusto vel.
+            </Text>
+          </View>
+          <View style={styles.section} >
+            <Text style={styles.sectionText}>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, in, distinctio impedit ipsam dolores quos modi blanditiis. Quos harum vero repellat, facere quibusdam error nihil veritatis, rerum neque ab aliquam!
+            </Text>
+          </View>
         </ScrollView>
       </View>
     )
